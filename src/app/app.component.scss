@@ -1,0 +1,9 @@
+.odd {
+  background-color: rgba(128, 128, 128, .5);
+}
+
+.detail {
+  &.hidden {
+    display: none;
+  }
+}

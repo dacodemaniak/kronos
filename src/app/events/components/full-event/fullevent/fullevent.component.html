@@ -1,0 +1,8 @@
+<div>
+  Voulez-vous participer à l'événement : {{ event.title }} ?<br>
+  Qui aura lieu du {{ event.beginAt }} au {{ event.endAt }}
+  <div [hidden]="declined">
+    <button type="button" (click)="accept()">Oui</button>
+    <button type="button" (click)="decline()">Non</button>
+  </div>
+</div>

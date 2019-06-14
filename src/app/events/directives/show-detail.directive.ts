@@ -21,7 +21,7 @@ export class ShowDetailDirective implements OnInit {
 
   ngAfterViewInit() {
     console.log('After view init');
-    this.detailElement = this._element.nativeElement.querySelector('div[class="detail"]', 'div[class="detail hidden"]');
+    this.detailElement = this._element.nativeElement;
   }
   private _toggleVisibility(): void {
     console.log('Change visible status of : ' + JSON.stringify(this.detailElement));

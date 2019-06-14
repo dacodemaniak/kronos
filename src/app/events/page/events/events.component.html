@@ -4,11 +4,11 @@
   </h1>
 </header>
 <div *ngFor="let event of eventsMap | keyvalue; let index=index; let isOdd=odd; let isEven=even">
-  <div *ngIf="event.value.beginAt.isSameOrAfter(today, 'd')" (click)="selectedEvent = event.value" appShowDetail [ngClass]="{'odd': isEven}">
+  <div *ngIf="event.value.beginAt.isSameOrAfter(today, 'd')" (click)="selectedEvent = event.value" [ngClass]="{'odd': isEven}">
     <h2>[{{ index }} {{isOdd ? 'pair' : 'impair'}}] {{ event.value.title | uppercase }}</h2>
     From : {{ event.value.beginAt | amLocale:'fr' | amDateFormat:'Do MMMM YYYY, h:mm' }} to : {{ event.value.endAt | amLocale:'fr' | amDateFormat:'Do MMMM YYYY, h:mm' }}
     <p>Time remaining before event raise : {{ event.value.beginAt | amDateFormat:'YYYY-MM-DD hh:mm' | countDown}}</p>
-    <div class="detail">
+    <div class="detail" appShowDetail>
       {{ event.value.detail }}
     </div>
     <div>
@@ -20,6 +20,8 @@
         <p *ngSwitchCase="2">Vous avez encore le temps de faire votre choix.</p>
       </div>
     </div>
+     <a [routerLink]="['event', event.value.id]">En savoir plus...</a>
   </div>
+
 </div>
 <app-full-event *ngIf="selectedEvent !== null" [event]="selectedEvent" (oneMoreContributor)="addOneContributor($event)"></app-full-event>

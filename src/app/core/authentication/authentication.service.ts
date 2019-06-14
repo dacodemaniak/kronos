@@ -19,6 +19,9 @@ export class AuthenticationService {
         resolve(this.account);
       }, 1000);
      });
+   }
 
+   public isAuthenticated(): boolean {
+     return this.account ? true : false;
    }
 }

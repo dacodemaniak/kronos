@@ -8,6 +8,8 @@ import { MomentModule } from 'ngx-moment';
 import { ContributorsPipe } from './pipes/contributors.pipe';
 import { CountDownPipe } from './pipes/count-down.pipe';
 import { ShowDetailDirective } from './directives/show-detail.directive';
+import { EventDetailComponent } from './page/event-detail/event-detail.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { ShowDetailDirective } from './directives/show-detail.directive';
     FullEventComponent,
     ContributorsPipe,
     CountDownPipe,
-    ShowDetailDirective
+    ShowDetailDirective,
+    EventDetailComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,9 @@ import { ShowDetailDirective } from './directives/show-detail.directive';
     MomentModule
   ],
   exports: [
-    EventsComponent
-  ]
+    EventsComponent,
+    EventDetailComponent
+  ],
+  providers: []
 })
 export class EventsModule { }

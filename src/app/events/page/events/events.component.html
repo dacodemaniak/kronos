@@ -7,7 +7,7 @@
   <div *ngIf="event.value.beginAt.isSameOrAfter(today, 'd')" (click)="selectedEvent = event.value" [ngClass]="{'odd': isEven}">
     <h2>[{{ index }} {{isOdd ? 'pair' : 'impair'}}] {{ event.value.title | uppercase }}</h2>
     From : {{ event.value.beginAt | amLocale:'fr' | amDateFormat:'Do MMMM YYYY, h:mm' }} to : {{ event.value.endAt | amLocale:'fr' | amDateFormat:'Do MMMM YYYY, h:mm' }}
-    <p>Time remaining before event raise : {{ event.value.beginAt | amDateFormat:'YYYY-MM-DD hh:mm' | countDown}}</p>
+    <p>{{ 'events.remainingTime' | translate }} : {{ event.value.beginAt | amDateFormat:'YYYY-MM-DD hh:mm' | countDown}}</p>
     <div class="detail" appShowDetail>
       {{ event.value.detail }}
     </div>

@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { AuthenticationService } from './../../../core/authentication/authentication.service';
 
+import { TranslateService } from '@ngx-translate/core';
+
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
 
@@ -15,7 +17,7 @@ import { Observable } from 'rxjs';
 })
 export class EventsComponent implements OnInit {
 
-  public title: String = 'kronos';
+  public title: string;
 
   public eventsMap: Map<number, EventInterface> = new Map<number, any>();
 
@@ -27,10 +29,11 @@ export class EventsComponent implements OnInit {
   public constructor(
     private authenticationService: AuthenticationService,
     private eventsService: EventsService,
+    private translateService: TranslateService,
     private activatedRoute: ActivatedRoute) {}
 
   public ngOnInit(): void {
-    console.log('Component onInit method');
+    this.title = this.translateService.instant('global.title');
     this.activatedRoute.data
       .pipe(
         map((data: Data) =>

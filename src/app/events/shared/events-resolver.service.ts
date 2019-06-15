@@ -12,7 +12,6 @@ export class EventsResolverService implements Resolve<Map<number, EventInterface
   constructor(private eventsService: EventsService) { }
 
   public resolve(): Observable<Map<number, EventInterface>> {
-    console.log('Resolver in progress');
     return this.eventsService.asObservable();
 
   }

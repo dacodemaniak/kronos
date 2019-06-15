@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,6 @@ import { ShowDetailDirective } from './directives/show-detail.directive';
 import { EventDetailComponent } from './page/event-detail/event-detail.component';
 import { ActivatedRoute } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     EventsComponent,
@@ -24,7 +24,8 @@ import { ActivatedRoute } from '@angular/router';
   imports: [
     CommonModule,
     EventsRoutingModule,
-    MomentModule
+    MomentModule,
+    TranslateModule
   ],
   exports: [
     EventsComponent,

@@ -1,0 +1,9 @@
+{
+  "global": {
+    "title": "Kronos, Suivez le fil des événements"
+  },
+
+  "events": {
+    "remainingTime": "Temps restant avant le début de l'événement"
+  }
+}
